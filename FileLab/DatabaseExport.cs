@@ -20,23 +20,17 @@ namespace FileLab
 
         private void DatabaseExport_Load(object sender, EventArgs e)
         {
-            QueryTextBox.Text = "select * from KHACHHANG";
+            //
         }
-
         private void btnQuery_Click(object sender, EventArgs e)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection("Data Source = NR; Initial Catalog = QLBH; User ID = test; Password = test"))
-                {
-                    connection.Open();
-                    DataTable dataTable = new DataTable();
-                    SqlCommand command = new SqlCommand(QueryTextBox.Text, connection);
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    dataAdapter.Fill(dataTable);
-                    DataGridView.DataSource = dataTable;
-                    connection.Close();
-                }
+                DataTable dataTable = new DataTable();
+                SqlCommand command = new SqlCommand(QueryTextBox.Text, sqlConnect.connection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                dataAdapter.Fill(dataTable);
+                DataGridView.DataSource = dataTable;
             }
             catch (Exception exception)
             {
@@ -73,9 +67,26 @@ namespace FileLab
                         excelApp.Cells[i + 2, j + 1] = DataGridView.Rows[i].Cells[j].Value.ToString();
                     }
                 }
-                excelApp.Application.ActiveWorkbook.SaveCopyAs("C:/Users/Admin/Desktop/DataExport.xlsx");
-                excelApp.Application.ActiveWorkbook.Saved = true;
 
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.DefaultExt = "xlsx";
+                sfd.AddExtension = true;
+                sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+                sfd.FileName = "DatabaseExport";
+                sfd.ShowDialog();
+                excelApp.Application.ActiveWorkbook.SaveCopyAs(sfd.FileName);
+                
+                if (excelApp.Application.ActiveWorkbook.Path == "")
+                {
+                    MessageBox.Show("Failed to export data.", "Notice");
+                }
+                else
+                {
+                    MessageBox.Show("Data exported successfully.", "Notice");
+                }
+
+                excelApp.Application.ActiveWorkbook.Saved = true;
+                excelApp.Application.ActiveWorkbook.Close();
                 excelApp.Application.Quit();
             }
             catch (Exception exception)
@@ -83,7 +94,16 @@ namespace FileLab
                 MessageBox.Show(exception.ToString(), "Error");
                 return;
             }
-            MessageBox.Show("Data exported successfully.", "Notice");
+        }
+
+        private void btn_ConnectionClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExcelSave_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

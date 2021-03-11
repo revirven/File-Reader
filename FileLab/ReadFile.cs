@@ -83,7 +83,7 @@ namespace FileLab
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DatabaseExport dbExport = new DatabaseExport();
+            sqlLogin dbExport = new sqlLogin();
             dbExport.Show();
             //
         }

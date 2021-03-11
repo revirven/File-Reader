@@ -59,3 +59,4 @@ D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csproj.GenerateResource.cache
 D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csproj.CoreCompileInputs.cache
 D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.exe
 D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.pdb
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.sqlLogin.resources

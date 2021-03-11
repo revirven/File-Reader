@@ -33,6 +33,8 @@ namespace FileLab
             this.btnQuery = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.ExportToExcel = new System.Windows.Forms.Button();
+            this.btn_ConnectionClose = new System.Windows.Forms.Button();
+            this.ExcelSave = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +78,26 @@ namespace FileLab
             this.ExportToExcel.UseVisualStyleBackColor = true;
             this.ExportToExcel.Click += new System.EventHandler(this.ExportToExcel_Click);
             // 
+            // btn_ConnectionClose
+            // 
+            this.btn_ConnectionClose.Location = new System.Drawing.Point(12, 551);
+            this.btn_ConnectionClose.Name = "btn_ConnectionClose";
+            this.btn_ConnectionClose.Size = new System.Drawing.Size(158, 45);
+            this.btn_ConnectionClose.TabIndex = 5;
+            this.btn_ConnectionClose.Text = "Close connection";
+            this.btn_ConnectionClose.UseVisualStyleBackColor = true;
+            this.btn_ConnectionClose.Click += new System.EventHandler(this.btn_ConnectionClose_Click);
+            // 
+            // ExcelSave
+            // 
+            this.ExcelSave.FileOk += new System.ComponentModel.CancelEventHandler(this.ExcelSave_FileOk);
+            // 
             // DatabaseExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 608);
+            this.Controls.Add(this.btn_ConnectionClose);
             this.Controls.Add(this.ExportToExcel);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.btnQuery);
@@ -99,5 +116,7 @@ namespace FileLab
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.Button ExportToExcel;
+        private System.Windows.Forms.Button btn_ConnectionClose;
+        private System.Windows.Forms.SaveFileDialog ExcelSave;
     }
 }

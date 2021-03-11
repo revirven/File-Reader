@@ -70,23 +70,13 @@ namespace FileLab
 
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.DefaultExt = "xlsx";
+                sfd.FileName = "Database_Export.xlsx";
                 sfd.AddExtension = true;
                 sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
-                sfd.FileName = "DatabaseExport";
                 sfd.ShowDialog();
                 excelApp.Application.ActiveWorkbook.SaveCopyAs(sfd.FileName);
-                
-                if (excelApp.Application.ActiveWorkbook.Path == "")
-                {
-                    MessageBox.Show("Failed to export data.", "Notice");
-                }
-                else
-                {
-                    MessageBox.Show("Data exported successfully.", "Notice");
-                }
-
                 excelApp.Application.ActiveWorkbook.Saved = true;
-                excelApp.Application.ActiveWorkbook.Close();
+
                 excelApp.Application.Quit();
             }
             catch (Exception exception)

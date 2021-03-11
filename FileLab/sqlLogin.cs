@@ -78,6 +78,7 @@ namespace FileLab
                     {
                         string StrConnect = "Data Source = " + login.dataSource + "; " + "Initial Catalog = " + login.userDatabase + "; " + "User ID = " + login.userName + "; " + "Password = " + login.userPassword;
                         sqlConnect.connection = new SqlConnection(StrConnect);
+                        sqlConnect.connection.Open();
                         DatabaseExport dataExport = new DatabaseExport();
                         dataExport.FormClosed += new FormClosedEventHandler(dataExport_FormClosed);
                         this.Hide();
@@ -102,6 +103,7 @@ namespace FileLab
                     {
                         string StrConnect = "Data Source = " + login.dataSource + "; " + "Initial Catalog = " + login.userDatabase + "; " + "Integrated Security = SSPI";
                         sqlConnect.connection = new SqlConnection(StrConnect);
+                        sqlConnect.connection.Open();
                         DatabaseExport dataExport = new DatabaseExport();
                         dataExport.FormClosed += new FormClosedEventHandler(dataExport_FormClosed);
                         this.Hide();

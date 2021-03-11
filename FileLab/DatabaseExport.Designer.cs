@@ -43,7 +43,7 @@ namespace FileLab
             this.QueryTextBox.Location = new System.Drawing.Point(12, 12);
             this.QueryTextBox.Multiline = true;
             this.QueryTextBox.Name = "QueryTextBox";
-            this.QueryTextBox.Size = new System.Drawing.Size(706, 141);
+            this.QueryTextBox.Size = new System.Drawing.Size(706, 76);
             this.QueryTextBox.TabIndex = 1;
             this.QueryTextBox.TextChanged += new System.EventHandler(this.QueryTextBox_TextChanged);
             // 
@@ -51,7 +51,7 @@ namespace FileLab
             // 
             this.btnQuery.Location = new System.Drawing.Point(761, 12);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(136, 141);
+            this.btnQuery.Size = new System.Drawing.Size(136, 76);
             this.btnQuery.TabIndex = 2;
             this.btnQuery.Text = "Query";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -60,11 +60,11 @@ namespace FileLab
             // DataGridView
             // 
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(12, 183);
+            this.DataGridView.Location = new System.Drawing.Point(12, 116);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
-            this.DataGridView.Size = new System.Drawing.Size(885, 350);
+            this.DataGridView.Size = new System.Drawing.Size(885, 411);
             this.DataGridView.TabIndex = 3;
             this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 

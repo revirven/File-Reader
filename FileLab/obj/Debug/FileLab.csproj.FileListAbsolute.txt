@@ -47,3 +47,15 @@ C:\Users\Admin\Desktop\FileLab\FileLab\FileLab\obj\Debug\FileLab.exe
 C:\Users\Admin\Desktop\FileLab\FileLab\FileLab\obj\Debug\FileLab.pdb
 C:\Users\Admin\Desktop\FileLab\FileLab\FileLab\obj\Debug\FileLab.DatabaseExport.resources
 C:\Users\Admin\Desktop\FileLab\FileLab\FileLab\obj\Debug\FileLab.csproj.ResolveComReference.cache
+D:\GitHub\File-Reader\FileLab\bin\Debug\FileLab.exe.config
+D:\GitHub\File-Reader\FileLab\bin\Debug\FileLab.exe
+D:\GitHub\File-Reader\FileLab\bin\Debug\FileLab.pdb
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csprojAssemblyReference.cache
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csproj.ResolveComReference.cache
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.DatabaseExport.resources
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.Properties.Resources.resources
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.ReadFile.resources
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csproj.GenerateResource.cache
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.csproj.CoreCompileInputs.cache
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.exe
+D:\GitHub\File-Reader\FileLab\obj\Debug\FileLab.pdb

@@ -28,7 +28,7 @@ namespace FileLab
 
             try
             {
-                using (SqlConnection connection = new SqlConnection("Data Source = enora; Initial Catalog = QLBH; User ID = test; Password = test"))
+                using (SqlConnection connection = new SqlConnection("Data Source = nr; Initial Catalog = QLBH; User ID = test; Password = test"))
                 {
                     connection.Open();
                     DataTable dataTable = new DataTable();

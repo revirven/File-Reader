@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileLab
 {
+    // Global class for taking inputs and use them across forms
     public static class login
     {
         public static string dataSource;

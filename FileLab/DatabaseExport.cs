@@ -54,7 +54,15 @@ namespace FileLab
             try
             {
                 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
-                var excelWb = excelApp.Application.Workbooks.Add(Type.Missing);
+                
+                if (excelApp == null)
+                {
+                    MessageBox.Show("Excel is not installed.", "Error");
+                    return;
+                }
+
+                var excelWb = excelApp.Workbooks.Add(Type.Missing);
+                
                 for (int i = 0; i < DataGridView.Columns.Count - 1; i++)
                 {
                     excelApp.Cells[1, i + 1] = DataGridView.Columns[i].HeaderText;
@@ -74,10 +82,17 @@ namespace FileLab
                 sfd.AddExtension = true;
                 sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
                 sfd.ShowDialog();
+
                 excelApp.Application.ActiveWorkbook.SaveCopyAs(sfd.FileName);
                 excelApp.Application.ActiveWorkbook.Saved = true;
 
-                excelApp.Application.Quit();
+                excelWb.Close();
+                excelApp.Quit();
+
+                // Clean up
+                releaseObject(excelWb);
+                releaseObject(excelApp);
+                
             }
             catch (Exception exception)
             {
@@ -94,6 +109,23 @@ namespace FileLab
         private void ExcelSave_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
 }
